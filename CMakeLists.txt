@@ -33,19 +33,6 @@ target_include_directories(cimplot PUBLIC cimgui/imgui)
 set_target_properties(cimplot PROPERTIES PREFIX "")
 
 
-add_library(cimnodes SHARED
-    cimgui/imgui/imgui.cpp
-    cimgui/imgui/imgui_draw.cpp
-    cimgui/imgui/imgui_demo.cpp
-    cimgui/imgui/imgui_widgets.cpp
-	cimgui/imgui/imgui_tables.cpp
-    cimnodes/cimnodes.cpp
-    cimnodes/imnodes/imnodes.cpp)
-
-target_include_directories(cimnodes PUBLIC cimgui/imgui)
-set_target_properties(cimnodes PROPERTIES PREFIX "")
-
-
 add_library(cimguizmo SHARED
     cimgui/imgui/imgui.cpp
     cimgui/imgui/imgui_draw.cpp
