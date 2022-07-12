@@ -8,7 +8,7 @@ set BUILD_CMAKE_GENERATOR_PLATFORM=x64
 
 :ArgLoop
 if [%1] == [] goto Build
-if /i [%1] == [Release] (set BUILD_CONFIG=Release&& shift & goto ArgLoop)
+if /i [%1] == [Release] (set BUILD_CONFIG=RelWithDebInfo&& shift & goto ArgLoop)
 if /i [%1] == [Debug] (set BUILD_CONFIG=Debug&& shift & goto ArgLoop)
 if /i [%1] == [x64] (set BUILD_ARCH=x64&& shift & goto ArgLoop)
 if /i [%1] == [x86] (set BUILD_ARCH=x86&& set BUILD_CMAKE_GENERATOR_PLATFORM=Win32&&shift & goto ArgLoop)
