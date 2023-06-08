@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.15)
 
 project(cimgui)
 
@@ -22,6 +22,8 @@ target_compile_definitions(cimgui PUBLIC CIMGUI_USE_WIN32=1)
 target_compile_definitions(cimgui PUBLIC CIMGUI_USE_DX11=1)
 target_include_directories(cimgui PUBLIC cimgui/imgui)
 set_target_properties(cimgui PROPERTIES PREFIX "")
+set_property(TARGET cimgui PROPERTY
+  MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 
 add_library(cimplot SHARED
@@ -37,6 +39,8 @@ add_library(cimplot SHARED
 
 target_include_directories(cimplot PUBLIC cimgui/imgui)
 set_target_properties(cimplot PROPERTIES PREFIX "")
+set_property(TARGET cimplot PROPERTY
+  MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 
 add_library(cimguizmo SHARED
@@ -50,3 +54,5 @@ add_library(cimguizmo SHARED
 
 target_include_directories(cimguizmo PUBLIC cimgui/imgui)
 set_target_properties(cimguizmo PROPERTIES PREFIX "")
+set_property(TARGET cimguizmo PROPERTY
+  MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
